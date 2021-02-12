@@ -13,7 +13,7 @@
     <h1>Index Page</h1>
     <h3>Create a User</h3>
     <!-- Action attribute is the route that will process the form, method: is the type of request -->
-    <form action='/users' method='post'>
+    <form action='/create_user' method='post'>
         {% csrf_token %}
         Name: <input type='text' name='name'>
         Email: <input type='email' name='email'>
