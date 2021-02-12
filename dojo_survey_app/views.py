@@ -1,3 +1,11 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+
+
 def index(request):
-    return HttpResponse("this is the equivalent of @app.route('/')!")
+    return render(request,"index.html")
+
+def create_user(request):
+    print("Got Post Info....................")
+    print(request.POST)
+    return render(request, "index.html")
+
