@@ -4,22 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>Dojo Survey</title>
 </head>
 
 <body>
 
-
-    <h1>Index Page</h1>
-    <h3>Create a User</h3>
-    <!-- Action attribute is the route that will process the form, method: is the type of request -->
-    <form action='/create_user' method='post'>
+    <form action='/survey_info' method='post'>
         {% csrf_token %}
-        Name: <input type='text' name='name'>
-        Email: <input type='email' name='email'>
-        <button type='submit'>Create User</button>
-    </form>
+        <div class="mb-3">
+            <!-- Name and Email -->
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@Dojo.com" name="email">
 
+            <!-- Dojo Location -->
+            <label for="location" class="form-label">Dojo Location</label>
+            <select class="form-select" id="location" aria-label="Default select example" name="location">
+                <option selected>Location</option>
+                <option value="san jose">San Jose</option>
+                <option value="dallas">Dallas</option>
+                <option value="online">Online</option>
+            </select>
+
+            <!-- Favorite Language -->
+            <label for="favorite_language" class="form-label">Favorite Language</label>
+            <select class="form-select" id="favorite_language" aria-label="Default select example"
+                name="favorite_language">
+                <option selected>Select a language</option>
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="js">JavaScript</option>
+            </select>
+
+            <!-- Comment -->
+            <label for="comment" class=" form-label">Comment (optional)</label>
+            <input type="text" class="form-control" id="comment" name="comment">
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit Survey</button>
+        </div>
+    </form>
 
 </body>
 

@@ -5,20 +5,16 @@ def index(request):
     return render(request, "index.html")
 
 
-def create_user(request):
-    print("Got Post Info....................")
+def survey(request):
+    print("Got survey information....................")
     name_from_form = request.POST['name']
     email_from_form = request.POST['email']
-    context = {
-        "name_on_template": name_from_form,
-        "email_on_template": email_from_form
-    }
 
-    return redirect("/success")
+    return redirect("/result")
 
 def success(request):
 
-    return render(request, "success.html")
+    return render(request, "result.html")
 
 
 
