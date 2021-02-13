@@ -5,39 +5,17 @@ def index(request):
     return render(request, "index.html")
 
 
-# def survey(request):
-#     name_form = request.POST['name']
-#     email_form = request.POST['email']
-#     location_form = request.POST['location']
-#     favorite_lang_form = request.POST['favorite_language']
-#     comments_form = request.POST['comment']
+def survey(request):
+    # Use session to store POST data in DB, so we can use it even when it redirects to another page
+    request.session['name'] = request.POST['name']
+    request.session['email'] = request.POST['email']
+    request.session['location'] = request.POST['location']
+    request.session['favorite_language'] = request.POST['favorite_language']
+    request.session['comment'] = request.POST['comment']
 
-#     context = {
-#         "name": name_form,
-#         "email": email_form,
-#         "location": location_form,
-#         "favorite_lang": favorite_lang_form,
-#         "comments": comments_form
-#     }
-#     print(context)
+    return redirect("/result")
 
-#     return redirect("/result", context)
 
 def success(request):
-    name_form = request.POST['name']
-    email_form = request.POST['email']
-    location_form = request.POST['location']
-    favorite_lang_form = request.POST['favorite_language']
-    comments_form = request.POST['comment']
 
-    context = {
-        "name": name_form,
-        "email": email_form,
-        "location": location_form,
-        "favorite_lang": favorite_lang_form,
-        "comments": comments_form
-    }
-
-    print(context)
-
-    return render(request, "result.html", context)
+    return render(request, "result.html")

@@ -13,17 +13,17 @@
 
 <body>
     <div class="alert alert-primary" role="alert">
-        From Submitted Correctly!
+        Form Submitted!
     </div>
 
     <dl class="row">
         <h2>Submitted Info:</h2>
         
-        <p class="info-name">Name:<span>{{ name }}</span></p>   
-        <p class="info-name">Email:<span>{{ email }}</span></p>
-        <p class="info-name">Dojo Location:<span>{{ location }}</span></p>
-        <p class="info-name">Favorite Language:<span>{{ favorite_lang }}</span></p>
-        <p class="info-name">Comments:<span>{{ comments }}</span></p>
+        <p class="info-name">Name:<span>{{ request.session.name }}</span></p>   
+        <p class="info-name">Email:<span>{{ request.session.email }}</span></p>
+        <p class="info-name">Dojo Location:<span>{{ request.session.location }}</span></p>
+        <p class="info-name">Favorite Language:<span>{{ request.session.favorite_language }}</span></p>
+        <p class="info-name">Comments:<span>{{ request.session.comment }}</span></p>
 
 
 
