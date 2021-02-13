@@ -7,12 +7,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>User Created</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style-result.css' %}">
 </head>
 
 <body>
     <div class="alert alert-primary" role="alert">
         From Submitted Correctly!
     </div>
+
+    <dl class="row">
+        <h2>Submitted Info:</h2>
+        
+        <p class="info-name">Name:<span>{{ name }}</span></p>   
+        <p class="info-name">Email:<span>{{ email }}</span></p>
+        <p class="info-name">Dojo Location:<span>{{ location }}</span></p>
+        <p class="info-name">Favorite Language:<span>{{ favorite_lang }}</span></p>
+        <p class="info-name">Comments:<span>{{ comments }}</span></p>
+
 
 
 

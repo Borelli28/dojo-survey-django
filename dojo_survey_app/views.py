@@ -6,13 +6,26 @@ def index(request):
 
 
 def survey(request):
-    print("Got survey information....................")
-    name_from_form = request.POST['name']
-    email_from_form = request.POST['email']
+    name_form = request.POST['name']
+    email_form = request.POST['email']
+    location_form = request.POST['location']
+    favorite_lang_form = request.POST['favorite_language']
+    comments_form = request.POST['comment']
 
-    return redirect("/result")
+    context = {
+        "name": name_form, 
+        "email": email_form, 
+        "location": location_form, 
+        "favorite_lang": favorite_lang_form, 
+        "comments": comments_form
+    }
+    print(context)
+
+    return redirect("/result", context)
 
 def success(request):
+
+    # print("Context is in success now: " + context)
 
     return render(request, "result.html")
 
